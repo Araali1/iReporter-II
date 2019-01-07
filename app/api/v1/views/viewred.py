@@ -3,6 +3,7 @@ from flask_restful import Resource
 from app.api.v1.models.redflags import Event as EventModel
 
 #from app.api import api
+eventObject = EventModel()
 
 #@api.route('/')
 #def index():
@@ -34,3 +35,27 @@ class RedFlags(Resource):
     def get(self, id):
         response = self.eventObject.getBy_id(self, id)
         return make_response(jsonify(response))
+
+class EventDetail(Resource):
+    def __init__(self):
+        self.EventObject = EventModel       
+
+    def patch(self, id, attribute):
+        patch_attributes = ['comment', 'location']
+        print(attribute)
+        if attribute in patch_attributes:
+            patch_data = request.get_json()
+            if attribute in patch_data:
+                if attribute == "location":
+                    result = eventObject.editLocation(id, patch_data['location'])
+                    return make_response(result)
+                result = eventObject.editComment(id, patch_data['comment'])
+                return make_response(result)
+            return make_response(jsonify({
+            "Status": 400, 
+            "message": "Please provide " + attribute  
+            }))
+        return make_response(jsonify({
+            "Status": 400,
+            "message": "You can only patch location or comment."
+        }), 400)
