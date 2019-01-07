@@ -77,3 +77,19 @@ class Event(object):
             "status": 404,
             "message": "Record with that ID does not exist." 
             })       
+    def deleteEvent(self, id):
+        if self.checkEvent(id):
+            for item in events_list:
+                if item['id'] == int(id):
+                    events_list.pop(events_list.index(item))
+                    return jsonify({
+                        "status": 204,
+                        "data": [{
+                            "id": id,
+                            "message": "You have delete a record"
+                        }]
+                    })
+        return jsonify({
+            "status": 400,
+            "message": "Record with this id nolonger exists"
+        })
