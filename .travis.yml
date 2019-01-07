@@ -6,4 +6,10 @@ python:
 
 install:
   - pip install -r requirements.txt
+
+script:
+  - pytest app/tests/v1/test_views.py
+
+after_success:
+  - coveralls
   
