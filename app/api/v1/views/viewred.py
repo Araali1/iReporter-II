@@ -27,10 +27,10 @@ class Events(Resource):
         response = self.eventObject.get_all() 
         return response
 
-#class RedFlags(Resource):
-#    def __init__(self):
-#        self.eventObject = EventModel
+class RedFlags(Resource):
+    def __init__(self):
+        self.eventObject = EventModel
 
-#    def get(self, id):
-#        response = self.eventObject.getBy_id(self, id)
-#        return make_response(jsonify(response)) 
+    def get(self, id):
+        response = self.eventObject.getBy_id(self, id)
+        return make_response(jsonify(response))
