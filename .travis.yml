@@ -1,12 +1,11 @@
-langaue: python
+language: python
 python:
-  - "3.6"
-  - "3.7.1"
+  - 3.6
+  - 3.7.1
 
 install:
-#  - python -m pip install -r requirements.txt 
-  -pip install pytest-cov
-  
+  - pip install -r requirements.txt   
+
 script:
   - python -m pytest --cov
 
