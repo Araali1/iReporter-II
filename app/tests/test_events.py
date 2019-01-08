@@ -24,7 +24,7 @@ class EventsTest(unittest.TestCase):
 
     def test_can_get_all_events(self):
         self.create_test_record()
-        resp = self.client.get('/api/v1/event')
+        resp = self.client.get('/api/v1/events')
         data = json.loads(resp.data)
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(len(data['events']), 1)
@@ -38,7 +38,7 @@ class EventsTest(unittest.TestCase):
         data = json.loads(resp.data)
         self.assertEqual(data['message'], 'Patched successfully')
         self.assertEqual(resp.status_code, 200)
-        self.assertEqual(data['data']['location'], 'mombasa')
+        self.assertEqual(data['data']['location'], 'Katanga')
 
     def test_can_not_patch_non_existent_record(self):
         self.create_test_record()
