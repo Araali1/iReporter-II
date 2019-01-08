@@ -1,6 +1,9 @@
 import unittest
 from flask import json
 from app import create_app
+from instance.config import testingConfig
+
+from app.api.v1.models.redflags import events_list
 
 class EventsTest(unittest.TestCase):
     def setUp(self):
@@ -49,3 +52,11 @@ class EventsTest(unittest.TestCase):
         data = json.loads(resp.data)
         self.assertEqual(data['message'], 'Record with that ID does not exist.')
         self.assertEqual(data['status'], 404)
+
+"""    def test_get_event_by_id(self):
+        self.create_test_record()
+        resp = self.client.get('/api/v1/redflags/1')
+        data = json.loads(resp.data)
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(len(events_list), 5)
+        self.assertEqual(data['data'][0]['id'], 1) """
