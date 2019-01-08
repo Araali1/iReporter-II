@@ -1,0 +1,14 @@
+langaue: python
+python:
+
+  - "3.7.1"
+
+install:
+  - pip install coveralls
+  
+script:
+  - python -m pytest --cov
+
+after_success:
+  - coveralls
+  
