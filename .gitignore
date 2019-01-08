@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+#From Stash
+api/
+
 # Distribution / packaging
 .Python
 build/
