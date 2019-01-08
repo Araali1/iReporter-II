@@ -90,6 +90,6 @@ class Event(object):
                         }]
                     })
         return jsonify({
-            "status": 400,
+            "status": 404,
             "message": "Record with this id nolonger exists"
         })
