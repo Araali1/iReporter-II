@@ -37,9 +37,9 @@ class Event(object):
             "events": self.events_list
         })
 
-#    def getBy_id(self, id):
-#        for item in events_list:
-#            if item['eventType']=='redflag' and item['id']==int(id):
-#                print('Created')
-#                return item
-#        return 'Sorry, No record yet'
+    def getBy_id(self, id):
+        for item in events_list:
+            if item['eventType']=='redflag' and item['id']==int(id):
+                print('Created')
+                return item
+        return 'Sorry, No record yet'
