@@ -10,4 +10,4 @@ Get Specific Record    -  GET       -   'api/v1/redflags/<id>'
 Edit Specific Record -   PATCH      -   '/api/v1/redflags/<id>/<attribute>'
 Delete a Record     -    DELETE      -   'api/v1/redflags/<id>'
 
-This site is published at <a href="https://Araali1.github.io/iReporter_UI/">Here<a/>
+This site is published at <a href="https://Araali1.github.io/iReporter_UI/">Here for UI<a/>
