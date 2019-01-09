@@ -36,6 +36,10 @@ class RedFlags(Resource):
         response = self.eventObject.getBy_id(self, id)
         return make_response(jsonify(response))
 
+    def delete(self, id):
+        response = eventObject.deleteEvent(id)
+        return make_response(response)
+
 class EventDetail(Resource):
     def __init__(self):
         self.EventObject = EventModel       

@@ -27,7 +27,7 @@ class Event(object):
         newEvent = self.events_list[events - 1]
         return jsonify({
            "status": 201,
-           "message": "Your record has been created",
+           "message": "Created succesfully",
            "data": newEvent
         })
     
@@ -40,7 +40,6 @@ class Event(object):
     def getBy_id(self, id):
         for item in events_list:
             if item['eventType']=='redflag' and item['id']==int(id):
-                print('Created')
                 return item
         return 'Sorry, No record yet'
 
@@ -77,3 +76,19 @@ class Event(object):
             "status": 404,
             "message": "Record with that ID does not exist." 
             })       
+    def deleteEvent(self, id):
+        if self.checkEvent(id):
+            for item in events_list:
+                if item['id'] == int(id):
+                    events_list.pop(events_list.index(item))
+                    return jsonify({
+                        "status": 204,
+                        "data": [{
+                            "id": id,
+                            "message": "You have delete a record"
+                        }]
+                    })
+        return jsonify({
+            "status": 404,
+            "message": "Record with this id nolonger exists"
+        })
