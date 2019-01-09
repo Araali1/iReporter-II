@@ -1,7 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 .pytest_cache/
-.vscode
+.vscode/
 
 # C extensions
 *.so
@@ -40,6 +40,9 @@ pip-delete-this-directory.txt
 # Flask stuff:
 instance/
 .webassets-cache
+
+#Stashed
+api/
 
 # PyBuilder
 target/
