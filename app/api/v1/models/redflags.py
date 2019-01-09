@@ -31,15 +31,15 @@ class Event(object):
            "data": newEvent
         })
     
-"""    # To get all incidents
+    # To get all incidents
     def get_all(self):
         return jsonify({
             "events": self.events_list
         })
 
-    def getBy_id(self, id):
-        for item in events_list:
-            if item['eventType']=='redflag' and item['id']==int(id):
-                print('ddffgg')
-                return item
-        return 'Sorry, No record yet' """
+#    def getBy_id(self, id):
+#        for item in events_list:
+#            if item['eventType']=='redflag' and item['id']==int(id):
+#                print('Created')
+#                return item
+#        return 'Sorry, No record yet'
