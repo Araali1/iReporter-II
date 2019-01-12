@@ -43,6 +43,17 @@ class EventsTest(unittest.TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(data['data']['location'], 'Katanga')
 
+    def test_can_patch_a_comment(self):
+        self.create_test_record()
+        patch_data = {
+            "comment": "I have seen a corrupt officer"
+        }
+        resp = self.client.patch('/api/v1/redflags/1/comment', data=json.dumps(patch_data), content_type='application/json')
+        data = json.loads(resp.data)
+        self.assertEqual(data['message'], 'Patched successfully')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(data['data']['comment'], 'I have seen a corrupt officer')
+
     def test_can_not_patch_non_existent_record(self):
         self.create_test_record()
         patch_data = {
