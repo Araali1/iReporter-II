@@ -1,0 +1,12 @@
+[report]
+omit = 
+    */python?.?/*
+    */__pycache__/*
+    */.pytest_cache/*
+    */.vscode/*
+    */.pyc/*
+    */env/*
+    */__init__.py/*
+    */viewred.py
+    */venv/*
+    */redflags.py
