@@ -5,7 +5,7 @@ from app.api.v1.models.redflags import Event as EventModel
 #from app.api import api
 eventObject = EventModel()
 
-#@api.route('/')
+#@app.route('/')
 #def index():
 #    return jsonify({'message': 'Okay, Araali1. Lets go, it fun'}), 200
 
