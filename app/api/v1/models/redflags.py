@@ -1,4 +1,4 @@
-from flask import jsonify, request, make_response
+from flask import jsonify
 from datetime import date
 import uuid
 
@@ -39,9 +39,9 @@ class Event(object):
 
     def getBy_id(self, id):
         for item in events_list:
-            if item['eventType']=='redflag' and item['id']==int(id):
+            if item['eventType'] == 'redflag' and item['id']==int(id):
                 return item
-        return 'Sorry, No record yet'
+        return 'Sorry, No record yet by this id'
 
     def checkEvent(self, id):
         for item in events_list:
@@ -59,7 +59,7 @@ class Event(object):
                "data": self.getBy_id(id)
            })
         return jsonify({
-            "status": 404,
+            "status": 400,
             "message": "Record with that ID does not exist." 
             })
 
@@ -73,7 +73,7 @@ class Event(object):
                "data": self.getBy_id(id)
            })
         return jsonify({
-            "status": 404,
+            "status": 400,
             "message": "Record with that ID does not exist." 
             })       
     def deleteEvent(self, id):
@@ -82,13 +82,13 @@ class Event(object):
                 if item['id'] == int(id):
                     events_list.pop(events_list.index(item))
                     return jsonify({
-                        "status": 204,
+                        "status": 201,
                         "data": [{
                             "id": id,
                             "message": "You have delete a record"
                         }]
                     })
         return jsonify({
-            "status": 404,
+            "status": 400,
             "message": "Record with this id nolonger exists"
         })
