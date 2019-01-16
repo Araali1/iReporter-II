@@ -37,25 +37,41 @@ This site is published at [Here for UI](https://Araali1.github.io/iReporter_UI/l
 When using the API to Create, an example of the input and output data for creating a redflag is shown below:
 
 ### Input
+
 {
-    "eventType": "redflag", 
+
+    "eventType": "redflag",
+    
     "comment": "We are tired of this sht", 
+    
     "createdBy": 4, 
+    
     "location": "Kitgum"
+    
 }
 
 ### Output
+
 {
     "data": {
+    
         "CreatedOn": "Wed, 16 Jan 2019 00:00:00 GMT",
+        
         "comment": "We are tired of this sht",
+        
         "createdBy": 4,
+
         "eventType": "redflag",
+
         "id": 1,
+
         "location": "Kitgum",
+
         "status": "pending"
     },
+
     "message": "Created succesfully",
+
     "status": 201
 }
 
