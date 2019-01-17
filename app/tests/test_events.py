@@ -23,7 +23,7 @@ class EventsTest(unittest.TestCase):
         resp = self.client.post('/api/v1/redflags', data=json.dumps(self.event), content_type='application/json')
         data = json.loads(resp.data)
         self.assertEqual(resp.status_code, 200)
-        self.assertEqual(data['message'], "Created successfully")
+        self.assertEqual(data['message'], "Created redflag record")
 
     def test_can_get_all_events(self):
         self.create_test_record()
@@ -62,7 +62,7 @@ class EventsTest(unittest.TestCase):
         resp = self.client.patch('/api/v1/redflags/5/location', data=json.dumps(patch_data), content_type='application/json')
         data = json.loads(resp.data)
         self.assertEqual(data['message'], 'Record with that ID does not exist.')
-        self.assertEqual(data['status'], 400)
+        self.assertEqual(data['status'], 404)
 
 
 """    def test_can_get_event_by_id(self):
