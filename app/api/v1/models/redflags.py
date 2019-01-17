@@ -23,11 +23,10 @@ class Event(object):
 
         events_list.append(event_details)
         events = len(self.events_list)
-        print(events)
         newEvent = self.events_list[events - 1]
         return jsonify({
            "status": 201,
-           "message": "Created succesfully",
+           "message": "Created successfully",
            "data": newEvent
         })
     
