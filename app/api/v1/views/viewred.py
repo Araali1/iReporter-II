@@ -56,10 +56,10 @@ class EventDetail(Resource):
                 result = eventObject.editComment(id, patch_data['comment'])
                 return make_response(result)
             return make_response(jsonify({
-            "Status": 400, 
+            "Status": 403, 
             "message": "Please provide " + attribute  
             }))
         return make_response(jsonify({
-            "Status": 400,
+            "Status": 403,
             "message": "You can only patch location or comment."
-        }), 400)
+        }), 403)
