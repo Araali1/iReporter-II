@@ -23,7 +23,7 @@ class EventsTest(unittest.TestCase):
         resp = self.client.post('/api/v1/redflags', data=json.dumps(self.event), content_type='application/json')
         data = json.loads(resp.data)
         self.assertEqual(resp.status_code, 200)
-        self.assertEqual(data['message'], "Created succesfully")
+        self.assertEqual(data['message'], "Created successfully")
 
     def test_can_get_all_events(self):
         self.create_test_record()
