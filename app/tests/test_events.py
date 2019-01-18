@@ -10,7 +10,8 @@ class EventsTest(unittest.TestCase):
         self.event = {
             "eventType": "redflag", 
             "comment": "We are tired of this sht", 
-            "createdBy": 4, 
+            "createdBy": 4,
+            "image": "corrupt.jpg", 
             "location": "Kitgum"
         }
         self.app = create_app('testing')

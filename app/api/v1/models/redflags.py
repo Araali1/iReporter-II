@@ -11,13 +11,14 @@ class Event(object):
         self.events_list = events_list
        
        # Method for creating an event
-    def create(self, eventType, comment, createdBy, location):
+    def create(self, eventType, comment, createdBy, location, image):
         event_details = {}
         event_details["id"] = len(events_list) + 1
         event_details["CreatedOn"] = date.today()
         event_details["createdBy"] = createdBy
         event_details["eventType"] = eventType
         event_details["location"] = location
+        event_details["image"] = image
         event_details["status"] = "pending"
         event_details["comment"] = comment
 

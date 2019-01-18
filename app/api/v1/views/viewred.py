@@ -18,10 +18,11 @@ class Events(Resource):
         events_data = request.get_json()
         eventType = events_data["eventType"]
         comment = events_data["comment"]
+        image = events_data["image"]
         createdBy = events_data["createdBy"]
         location = events_data["location"]
        
-        response = self.eventObject.create(eventType, comment, createdBy, location)
+        response = self.eventObject.create(eventType, comment, createdBy, location, image)
         return response
     
     def get(self):
