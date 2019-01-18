@@ -42,7 +42,6 @@ instance/
 .webassets-cache
 
 #Stashed
-api/
 
 # PyBuilder
 target/
