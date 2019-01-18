@@ -7,6 +7,4 @@ omit =
     */.pyc/*
     */env/*
     */__init__.py/*
-    */viewred.py
     */venv/*
-    */redflags.py
