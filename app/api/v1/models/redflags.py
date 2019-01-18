@@ -92,3 +92,4 @@ class Event(object):
             "status": 404,
             "message": "Record with this id nolonger exists"
         })
+        
