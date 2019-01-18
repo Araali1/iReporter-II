@@ -33,6 +33,7 @@ The corresponding endpoints and their functionalities are described in the sampl
 |DELETE /api/v1/redflags/1                     | deletes a specific redflag e.g (with id 1)
 
 This site is published at [Here for UI](https://Araali1.github.io/iReporter_UI/login.html)
+The site's API is found [Here](https://aireporterii.herokuapp.com/api/v1/redflags)
 
 When using the API to Create, an example of the input and output data for creating a redflag is shown below:
 
